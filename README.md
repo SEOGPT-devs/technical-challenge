@@ -1,4 +1,4 @@
-# Desafio Back-end SEOGPT
+# Desafio Técnico SEOGPT
 
 Primeiramente, obrigado pelo seu interesse em trabalhar na SEOGPT!
 Abaixo você encontrará todas as informações necessárias para iniciar o seu teste.
