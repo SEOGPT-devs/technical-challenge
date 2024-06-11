@@ -7,7 +7,7 @@ Abaixo você encontrará todas as informações necessárias para iniciar o seu 
 
 - Leia com atenção este documento todo e tente seguir ao **máximo** as instruções;
 - Clone esse repositório, e pode subir como um commit por aqui mesmo.
-- Você poderá consultar o Google, Stackoverflow, ChatGPT. Importa muito mais sua capacidade de resolver problemas, e não como resolve eles.;
+- Você poderá consultar o Google, Stackoverflow, ChatGPT. Importa muito mais sua capacidade de resolver problemas dinâmicamente, e não os métodos que você usa para isso.
 - Dê uma olhada nos [Materiais úteis](#materiais-úteis);
 - Fique à vontade para perguntar qualquer dúvida aos recrutadores;
 - Fique tranquilo, respire, assim como você, também já passamos por essa etapa. Boa sorte! :)
