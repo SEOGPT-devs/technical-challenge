@@ -17,7 +17,7 @@ Abaixo você encontrará todas as informações necessárias para iniciar o seu 
 
 - Crie um container de Docker para rodar sua aplicação.
 
-- A linguagem principal usada deve ser python. É aceítavel criar scripts menores como em Javascript para ingestão de páginas, mas o core da aplicação deve ser feito em java.
+- A linguagem principal usada deve ser python. É aceítavel criar scripts menores como em Javascript para ingestão de páginas, mas o core da aplicação deve ser feito em Python.
 
 - Escolha qualquer framework tanto de back-end e front-end que se sinta **confortável** em trabalhar. Esse teste **não faz** nenhuma preferência,
   portanto decida por aquele com o qual estará mais seguro em apresentar e conversar com a gente na entrevista ;)
