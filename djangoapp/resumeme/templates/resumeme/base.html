@@ -2,8 +2,14 @@
 <html lang="pt-BR">
 <head>
     {% include "resumeme/partials/_head.html" %}
-</head>
-<body>
+    </head>
+    <body>
+    {% include "resumeme/partials/_header.html" %}
+
     {% block content %}{% endblock content %}
+    
+    {% include "resumeme/partials/_pagination.html" %}
+    
+    {% include "resumeme/partials/_footer.html" %}
 </body>
 </html>
