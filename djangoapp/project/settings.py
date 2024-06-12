@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     if h.strip()
 ]
 
-OPENAPI_KEY = os.getenv('OPENAPI_KEY', 'change-me')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', 'change-me')
 
 
 # Application definition
