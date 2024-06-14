@@ -3,5 +3,10 @@
 {% block content %}
     <h1>Hello World!</h1>
     {% include "resumeme/partials/_form.html" %}
+    {% if resumed_content %}
+        {% autoescape off %}
+            {{ resumed_content }}
+        {% endautoescape %}
+    {% endif %}
     <h2>bye</h2>
 {% endblock content %}
