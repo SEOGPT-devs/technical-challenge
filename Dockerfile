@@ -26,6 +26,7 @@ EXPOSE 8000
 RUN python -m venv /venv && \
     /venv/bin/pip install --upgrade pip && \
     /venv/bin/pip install -r /djangoapp/requirements.txt && \
+    /venv/bin/python -m nltk.downloader -d /venv/nltk_data punkt && \
     adduser --disabled-password --no-create-home duser && \
     mkdir -p /data/web/static && \
     mkdir -p /data/web/media && \
