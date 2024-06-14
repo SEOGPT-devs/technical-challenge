@@ -1,4 +1,4 @@
-FROM python:3.12-alpine3.20
+FROM python:3.12.3-alpine3.20
 LABEL maintainer="pedrozaccaria@gmail.com"
 
 # This environment variable is used to control if Python should
