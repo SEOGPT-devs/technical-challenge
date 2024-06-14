@@ -26,6 +26,7 @@ langchain-core==0.2.5
 langchain-openai==0.1.8
 langchain-text-splitters==0.2.1
 langsmith==0.1.77
+Markdown==3.6
 marshmallow==3.21.3
 multidict==6.0.5
 mypy-extensions==1.0.0
