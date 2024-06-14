@@ -1,0 +1,5 @@
+<form action="/" method="post">
+    {% csrf_token %}
+    {{form.to_be_scrapped}}
+    <button type="submit">Resumir</button>
+</form>
