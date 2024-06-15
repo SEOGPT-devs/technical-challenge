@@ -4,22 +4,21 @@ from langchain_community.document_loaders import WebBaseLoader, UnstructuredMark
 from langchain_openai import ChatOpenAI
 from langchain_core.documents import Document
 from langchain_community.document_loaders import ToMarkdownLoader
-import markdown
+# import markdown
 import os
+
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
+chain = load_summarize_chain(llm, chain_type="stuff")
 
 
 def scrapUrl(valid_url):
+    MD_API_KEY = os.getenv('MD_API_KEY')
     loader = ToMarkdownLoader(
         url=valid_url,
-        api_key=os.getenv('MD_API_KEY')
+        api_key=MD_API_KEY
     )
-    print(loader['error'])
-    print(loader['article'])
+
     docs = loader.load()
+    result = chain.invoke(docs)
 
-    assert len(docs) == 1
-    assert isinstance(docs[0], Document)
-    resumed_text = docs[0].page_content
-    html_resumed_text = markdown.markdown(resumed_text)
-
-    return html_resumed_text
+    return result['output_text']
