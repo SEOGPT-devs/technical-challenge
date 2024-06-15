@@ -1,12 +1,21 @@
 {% extends "resumeme/base.html" %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    {% include "resumeme/partials/_form.html" %}
-    {% if resumed_content %}
-        {% autoescape off %}
-            {{ resumed_content }}
-        {% endautoescape %}
-    {% endif %}
-    <h2>bye</h2>
+    <div class="card">
+        <div class="card-header text-center typewriter">
+            <h1 id="typewriterId">ResumeME!</h1>
+        </div>
+        <div class="card-body">
+            {% include "resumeme/partials/_form.html" %}
+            <div class="card-text">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                    {% if resumed_content %}
+                        {% autoescape off %}
+                            {{ resumed_content }}
+                        {% endautoescape %}
+                    {% endif %}
+                </div>
+            </div>            
+        </div>
+    </div>
 {% endblock content %}

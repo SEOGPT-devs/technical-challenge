@@ -7,7 +7,7 @@ class UrlForm(forms.Form):
         widget=forms.URLInput(
             attrs={
                 'placeholder': 'Insira o link da página aqui',
-                'class': 'form-control'
+                'class': 'form-control form-control-lg'
             }
         )
     )
