@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-svg {
+.minisvg {
     height: 1rem;
 }
 
@@ -27,7 +27,7 @@ svg {
     /* Adjust as needed */
     animation:
         typing 3.5s steps(40) 1s 1 normal both,
-        blink-caret .75s steps(40) infinite normal;
+        blink-caret .75s steps(20) infinite normal;
 }
 
 /* The typing effect */
@@ -47,7 +47,7 @@ svg {
         border-color: transparent
     }
 
-    75% {
+    66% {
         border-color: #273f92
     }
 }
@@ -157,13 +157,14 @@ head+body {
 }
 
 .card-body {
-    box-shadow: inset -20px -20px 20px 20px rgba(0, 0, 0, .1)
+    box-shadow: inset -20px -20px 20px 20px rgba(0, 0, 0, .1);
 }
 
 [data-bs-spy] {
     overflow-y: scroll;
-    height: 50rem;
-    max-height: calc(100vh - 30em);
+    height: 25rem;
+    max-height: 25rem;
+    margin-bottom: 1rem;
 }
 
 .btn-bd-primary, .btn-outline-success {
@@ -248,7 +249,6 @@ h1 {
     align-items: center;
     appearance: none;
     background: linear-gradient(315deg, rgba(101, 0, 94, 1) 3%, rgba(60, 132, 206, 1) 38%, rgba(48, 238, 226, 1) 68%, rgba(255, 25, 25, 1) 98%);
-
     border: 0;
     border-radius: 6px;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
@@ -303,4 +303,112 @@ h1 {
     --bs-dropdown-link-hover-bg: rgb(45, 35, 66, 0.3) !important;
     --bs-dropdown-link-active-bg: rgb(45, 35, 66, 0.4) !important;
     background-color: var(--bs-dropdown-bg);
+}
+
+button[tocopy], button[todownload] {
+    font-weight: 500;
+    padding: .5em 1em;
+    background: #fff;
+    color: #4A5568;
+    border: 0px solid #A0AEC0;
+    margin: .1em;
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+    box-shadow: 0 0 0 #BEE3F8;
+    transform: translateY(0);
+
+    i {
+        color: #A0AEC0;
+        margin-right: .3em;
+        transition: all .2s ease-out;
+    }
+}
+
+button[tocopy]:first-of-type, button[todownload]:first-of-type {
+    border-radius: .5em 0 0 .5em !important;
+}
+
+button[tocopy]:last-of-type, button[todownload]:last-of-type {
+    border-radius: 0 .5em .5em 0 !important;
+}
+
+.multi-button:hover button {
+    color: #A0AEC0;
+}
+
+.multi-button:hover button:hover {
+    background: #D53F8C;
+    color: #fff;
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #9e2e68 0 -3px 0 inset;
+    transform: translateY(-.2em);
+}
+
+.multi-button:hover button i {
+    color: #CBD5E0;
+}
+
+.multi-button:hover button:hover i {
+    color: #FED7E2;
+    transform: rotate(-10deg);
+}
+
+.multi-button {
+    height: 45px;
+    width: 1rem;
+    margin-bottom: 2px;
+}
+
+
+.underlined {
+    /*   background: red; */
+    position: relative;
+}
+
+.underline-mask:after {
+    content: '';
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(280 80% 50%);
+    /* Use a conic gradient mask to hide and show the bits you want */
+    --spread: 140deg;
+    --start: 290deg;
+    mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+}
+
+
+.underline-overflow {
+    display: inline-block;
+    /* A little extra padding and overflow hidden   */
+    overflow: hidden;
+    padding-bottom: clamp(1rem, 2vmin, 2rem);
+}
+
+.underline-overflow:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 150%;
+    aspect-ratio: 2.5 / 1;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    border-radius: 50%;
+    border: 6px solid hsl(10 80% 50%);
+}
+
+.underline-clip:after {
+    content: '';
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(130 80% 50%);
+    /* Use a clip-path to hide and show the bits you want */
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
 }
