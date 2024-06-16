@@ -1,73 +1,138 @@
-# Desafio Técnico SEOGPT
+# ResumeME!
 
-Primeiramente, obrigado pelo seu interesse em trabalhar na SEOGPT!
-Abaixo você encontrará todas as informações necessárias para iniciar o seu teste.
+<p align="center">
+  <a
+    href="https://github.com/starship/starship/blob/master/docs/pt-BR/guide/README.md"
+    ><img
+      height="20"
+      src="https://raw.githubusercontent.com/starship/starship/master/media/flag-br.png"
+      alt="Português do Brasil"
+  /></a>
+  <a href="https://github.com/starship/starship/blob/master/README.md"
+    ><img
+      height="20"
+      src="https://raw.githubusercontent.com/starship/starship/master/media/flag-us.png"
+      alt="English"
+  /></a>
+</p>
 
-## Avisos antes de começar
+**The minimal and blazing-fast summarization tool for you!**
 
-- Leia com atenção este documento todo e tente seguir ao **máximo** as instruções;
-- Clone esse repositório, e pode subir como um commit por aqui mesmo.
-- Você poderá consultar o Google, Stackoverflow, ChatGPT. Importa muito mais sua capacidade de resolver problemas dinâmicamente, e não os métodos que você usa para isso.
-- Dê uma olhada nos [Materiais úteis](#materiais-úteis);
-- Fique à vontade para perguntar qualquer dúvida aos recrutadores;
-- Fique tranquilo, respire, assim como você, também já passamos por essa etapa. Boa sorte! :)
-- Após terminar, suba o commit com um readme explicando a logística da sua aplicação.
+-   **Wikipedia:** yes, now you can summarize – _the summary!_ 🚀
+-   **Github Docs:** shows relevant information at a glance.
+-   **News:** Not in the mood to read the news? _Send me the link and I'll make that easier for you._
 
-### Sobre o ambiente da aplicação:
+<a name="🚀-installation"></a>
 
-- Crie um container de Docker para rodar sua aplicação.
+## 🚀 Installation
 
-- A linguagem principal usada deve ser python. É aceítavel criar scripts menores como em Javascript para ingestão de páginas, mas o core da aplicação deve ser feito em Python.
+### Prerequisites
 
-- Escolha qualquer framework tanto de back-end e front-end que se sinta **confortável** em trabalhar. Esse teste **não faz** nenhuma preferência,
-  portanto decida por aquele com o qual estará mais seguro em apresentar e conversar com a gente na entrevista ;)
+-   [Python](https://www.python.org/downloads/) installed in version >= `3.12.3`
 
-- Não se preocupe com o Design do Front-End. Queremos saber sua habilidade de resolver os problemas, não de fazer uma interface bonitinha.
+### Step 1. Download Files
 
-## Objetivo: Knowledge Extractor
+Clone the repository to your system.
 
-O Knowledge Extractor é um aplicativo que permite enviar uma URL de um site, que será lida e processada por uma IA para criar um resumo para estudos. A ideia é possibilitar que qualquer página da internet possa ser convertida em conhecimento valioso de forma simples.
+Access `.../technical-challenge/` folder.
 
-### Requisitos
+To verify if you in the right place, list your files and dirs using
 
-A seguir estão algumas regras de negócio que são importantes para o funcionamento do SEOGPT Knowledge Extractor:
+```sh
+ls
+```
 
-- Use a linguagem Python;
-- Utilize LangChain e ChatGPT 3.5 para processamento de linguagem natural;
-- Entre em contato com o recrutador para obter uma chave da OPENAI a ser usada nesse teste (limite de $10 de gasto);
-- O aplicativo deve permitir o envio de uma URL de um site e retornar um resumo do conteúdo da página;
-- O resumo deve ser criado em Markdown, e poder facilitar o aprendizado.
-- O input deve ser dinâmico, e aceitar vários tipos de página da internet:
-- - Páginas de documentação de Código
-- - Páginas da Wikipédia
-- - Artigos de Jornais online
-- - Páginas de Papéis Científicos
+You should see something like this.
 
-### Adicionais legais:
+```
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        12/06/2024     06:19                djangoapp
+d-----        11/06/2024     23:38                dotenv_files
+d-----        12/06/2024     01:58                scripts
+-a----        11/06/2024     20:06            229 .dockerignore
+-a----        11/06/2024     20:53           2100 .gitignore
+-a----        08/06/2024     20:39              6 .prettierignore
+-a----        12/06/2024     02:13            604 docker-compose.yml
+-a----        14/06/2024     14:00           1622 Dockerfile
+-a----        15/06/2024     19:40           5345 README.md
+```
 
-- Conseguir utilizar imagens dentro ou fora da página para os resumos.
-- Estrutura formatada de Markdown para o resumo
+### Step 2. Build the project image
 
-### Materiais úteis
+Create a Python Local Environment.
 
-- [LangChain Documentation](https://langchain.readthedocs.io/en/latest/)
-- [OpenAI API Documentation](https://beta.openai.com/docs/)
-- [Docker Documentation](https://docs.docker.com/)
+```sh
+python -m venv venv .
+```
 
-## Instruções para envio
+### Step 3. Entering the virtual environment
 
-- Clone o repositório disponibilizado pelo recrutador.
-- Crie uma branch com seu nome e sobrenome, por exemplo, `fulano_silva`.
-- Implemente sua solução, fazendo commits regulares com mensagens claras sobre o que foi implementado em cada etapa.
-- Ao finalizar, suba a branch e envie um pull request.
-- Inclua um README com explicações detalhadas sobre a solução implementada, como rodar o projeto, decisões de design, entre outros pontos que julgar relevantes.
+Activate your venv with
 
-## Critérios de Avaliação
+```sh
+. venv/Scripts/activate
+```
 
-- **Funcionalidade**: O aplicativo funciona conforme esperado? Atende a todos os requisitos especificados?
-- **Código**: O código é limpo, organizado e bem documentado?
-- **Docker**: A aplicação roda corretamente dentro de um container Docker?
-- **Inovação**: O candidato implementou alguma funcionalidade extra ou tomou decisões criativas que agregam valor ao projeto?
-- **README**: O arquivo README é claro e fornece todas as informações necessárias para entender e executar o projeto?
+### Step 4. Configure Environment Variables
 
-Boa sorte! Estamos ansiosos para ver sua solução!
+Are you installing the files because you are testing [pZacca](https://github.com/pZacca)?
+
+<details>
+<summary>No</summary>
+
+Create a `.env` file inside `./dotenv_files/`
+Based on `.env-example`, fill the new file with your settings and keys.
+If you don't have one of those keys, please see [this](#-may-be-useful)
+
+</details>
+
+<details>
+<summary>Yes</summary>
+
+Oh, hi there! You can ask me anytime for the MD_API_KEY, it is a HTML to Markdown converter used in the scrapping process.
+Or if you wish, click on [here](https://2markdown.com/signup) to create you own, it's free if you make less than 100 API requests per month.
+
+</details>
+
+<details>
+<summary>What does 2md do?</summary>
+
+`2markdown` transforms websites into clean Markdown via API, very useful to output formatted summaries. `2md` ntegrates well with [Python-Markdown](https://github.com/Python-Markdown/markdown), that converts `Markdown` files to `HTML` and so allowing perfectly formatted summary outputs.
+
+</details>
+
+In `./dotenv_files/`
+
+### Step 5. Building Docker image
+
+Run this command to build Docker image, it will execute migrations and other commands to build the entire server.
+
+```sh
+docker-compose up --build
+```
+
+## Step 6. Local Access
+
+Access your `localhost` or `127.0.0.1` in the port `:8000` and have a good use.
+
+## 📚 May be useful
+
+-   [OpenAI API Docs](https://platform.openai.com/docs/api-reference/introduction)
+-   [2md API Docs](https://2markdown.com/docs)
+-   [Docker Docs](https://docs.docker.com/)
+-   [Python Docs](https://docs.python.org/3/)
+
+## 💭 Extras
+
+This project is based on **MVT** (Model - View - Template) architecture. Comparing to **MVC** (Model - View - Controller), MVT takes advantage on beeing easily modificated and loosely coupled. At the same time, project's flow can be harder to understand.
+
+## 🔗 Let's connect!
+
+<p align="left">
+
+<a href="https://linkedin.com/in/pedro-zaccaria/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
+[![GitHub followers](https://img.shields.io/github/followers/pZacca.svg?style=social&label=Follow)](https://github.com/pZacca?tab=followers)
+<a href="https://wa.me/5513997655782"><img alt="Static Badge" src="https://img.shields.io/badge/WhatsApp-grey?logo=whatsapp"></a>
+
+</p>
